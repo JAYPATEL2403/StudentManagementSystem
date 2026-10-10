@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Student Management System</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="login-info">
+
+            <div class="logo">
+                🎓
+            </div>
+
+            <h1>
+                Student Management System
+            </h1>
+
+            <p>
+                A professional platform to manage
+                students, attendance, results and
+                academic information.
+            </p>
+
+            <div class="features">
+
+                <div>✓ Student Management</div>
+                <div>✓ Attendance Management</div>
+                <div>✓ Result Management</div>
+                <div>✓ Course Management</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="login-box">
+
+            <div class="login-header">
+
+                <h2>Welcome Back</h2>
+
+                <p>
+                    Login to continue to your portal
+                </p>
+
+            </div>
+
+
+            <!-- ROLE -->
+
+            <div class="role-selection">
+
+                <button
+                    type="button"
+                    id="adminBtn"
+                    class="role-btn active">
+
+                    👨‍💼 Admin
+
+                </button>
+
+                <button
+                    type="button"
+                    id="studentBtn"
+                    class="role-btn">
+
+                    👨‍🎓 Student
+
+                </button>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="loginForm">
+
+                <!-- ADMIN -->
+
+                <div
+                    class="form-group"
+                    id="adminField">
+
+                    <label>
+                        Admin Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminUsername"
+                        placeholder="Enter admin username">
+
+                </div>
+
+
+                <!-- STUDENT -->
+
+                <div
+                    class="form-group hidden"
+                    id="studentField">
+
+                    <label>
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        placeholder="Enter student ID">
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        required>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="login-options">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="remember">
+
+                        Remember me
+
+                    </label>
+
+                    <span>
+                        Secure Login
+                    </span>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-btn">
+
+                    Login
+
+                </button>
+
+
+                <p
+                    id="loginMessage"
+                    class="login-message">
+                </p>
+
+            </form>
+
+
+            <!-- DEMO -->
+
+            <div class="demo-box">
+
+                <strong>
+                    Demo Login
+                </strong>
+
+                <p id="demoText">
+                    Admin: admin / admin123
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

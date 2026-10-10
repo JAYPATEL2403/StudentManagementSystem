@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Student Portal | Student Management System</title>
+
+    <link rel="stylesheet" href="student.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         MOBILE HEADER
+    ========================== -->
+
+    <header class="mobile-header">
+
+        <button
+            id="menuBtn"
+            class="menu-btn">
+
+            ☰
+
+        </button>
+
+        <h2>Student Portal</h2>
+
+    </header>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="student-sidebar" id="studentSidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h2>Student Portal</h2>
+
+                <span>Academic System</span>
+
+            </div>
+
+        </div>
+
+
+       <!-- STUDENT PROFILE -->
+
+<div class="sidebar-profile">
+
+    <div class="profile-avatar" id="sidebarProfileAvatar">
+        --
+    </div>
+
+    <div>
+
+        <h3 id="sidebarStudentName">
+            Loading...
+        </h3>
+
+        <p class="student-id">
+            Loading...
+        </p>
+
+    </div>
+
+</div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="student-nav">
+
+            <a
+                href="#dashboard"
+                class="nav-link active">
+
+                <span>▣</span>
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="#profile"
+                class="nav-link">
+
+                <span>👤</span>
+                My Profile
+
+            </a>
+
+
+            <a
+                href="#attendance"
+                class="nav-link">
+
+                <span>✓</span>
+                Attendance
+
+            </a>
+
+
+            <a
+                href="#results"
+                class="nav-link">
+
+                <span>▤</span>
+                Results
+
+            </a>
+
+
+            <a
+                href="#courses"
+                class="nav-link">
+
+                <span>📚</span>
+                My Courses
+
+            </a>
+
+
+            <a
+                href="#notifications"
+                class="nav-link">
+
+                <span>🔔</span>
+                Notifications
+
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutBtn"
+                class="logout-btn">
+
+                <span>↪</span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="student-main">
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+
+       <section
+    id="dashboard"
+    class="student-section active">
+
+    <div class="top-bar">
+
+        <div>
+
+            <p class="small-title">
+                STUDENT PORTAL
+            </p>
+
+            <h1 id="dashboardWelcome">
+                Welcome back, Student!
+            </h1>
+
+            <p class="subtitle">
+                Here is your academic overview.
+            </p>
+
+        </div>
+
+
+        <div class="top-student">
+
+            <div
+                class="small-avatar"
+                id="dashboardAvatar">
+                ST
+            </div>
+
+            <div>
+
+                <strong id="dashboardStudentName">
+                    Loading...
+                </strong>
+
+                <span class="student-id">
+                    STU001
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATS -->
+
+    <div class="stats-grid">
+
+
+        <!-- ATTENDANCE -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                ✓
+            </div>
+
+            <div>
+
+                <span>
+                    Attendance
+                </span>
+
+                <h2 id="dashboardAttendance">
+                    0%
+                </h2>
+
+                <small id="dashboardAttendanceText">
+                    Loading attendance
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- OVERALL GRADE -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                A+
+            </div>
+
+            <div>
+
+                <span>
+                    Overall Grade
+                </span>
+
+                <h2>
+                    A+
+                </h2>
+
+                <small>
+                    Excellent performance
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- CGPA -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+                8.6
+            </div>
+
+            <div>
+
+                <span>
+                    Average Marks
+                </span>
+
+                <h2>
+                    8.6
+                </h2>
+
+                <small>
+                    Current semester
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEMESTER -->
+
+        <div class="stat-card">
+
+            <div
+                class="stat-icon orange"
+                id="dashboardSemesterIcon">
+                -
+            </div>
+
+            <div>
+
+                <span>
+                    Semester
+                </span>
+
+                <h2 id="dashboardSemester">
+                    -
+                </h2>
+
+                <small id="dashboardCourse">
+                    Loading...
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Quick Actions
+            </h2>
+
+            <p>
+                Access your academic information quickly.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="quick-actions">
+
+
+        <!-- PROFILE -->
+
+        <button
+            type="button"
+            id="profileBtn"
+            class="action-card">
+
+            <div class="action-icon">
+                👤
+            </div>
+
+            <div>
+
+                <h3>
+                    My Profile
+                </h3>
+
+                <p>
+                    View personal information
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <!-- ATTENDANCE -->
+
+        <button
+            type="button"
+            id="viewAttendanceBtn"
+            class="action-card">
+
+            <div class="action-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Attendance
+                </h3>
+
+                <p>
+                    Check attendance records
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <!-- RESULTS -->
+
+        <button
+            type="button"
+            id="viewResultBtn"
+            class="action-card">
+
+            <div class="action-icon">
+                📊
+            </div>
+
+            <div>
+
+                <h3>
+                    Results
+                </h3>
+
+                <p>
+                    View examination results
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <!-- COURSES -->
+
+        <button
+            type="button"
+            id="coursesBtn"
+            class="action-card">
+
+            <div class="action-icon">
+                📚
+            </div>
+
+            <div>
+
+                <h3>
+                    My Courses
+                </h3>
+
+                <p>
+                    View enrolled courses
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- RECENT ACTIVITY -->
+
+    <div class="dashboard-grid">
+
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        Recent Activity
+                    </h2>
+
+                    <p>
+                        Your latest academic activities
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-list">
+
+
+                <div class="activity">
+
+                    <div class="activity-dot">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Result Published
+                        </strong>
+
+                        <p>
+                            Semester 5 result has been published.
+                        </p>
+
+                        <small>
+                            2 days ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div class="activity-dot">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Attendance Updated
+                        </strong>
+
+                        <p>
+                            Your attendance was updated.
+                        </p>
+
+                        <small>
+                            4 days ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div class="activity-dot">
+                        !
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New Notice
+                        </strong>
+
+                        <p>
+                            Examination schedule is available.
+                        </p>
+
+                        <small>
+                            1 week ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- UPCOMING -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        Upcoming
+                    </h2>
+
+                    <p>
+                        Important academic dates
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="upcoming-item">
+
+                <div class="date-box">
+
+                    <strong>
+                        15
+                    </strong>
+
+                    <span>
+                        OCT
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Internal Examination
+                    </strong>
+
+                    <p>
+                        Database Management
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="upcoming-item">
+
+                <div class="date-box">
+
+                    <strong>
+                        20
+                    </strong>
+
+                    <span>
+                        OCT
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Project Submission
+                    </strong>
+
+                    <p>
+                        Final year project
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =========================
+             PROFILE
+        ========================== -->
+
+     <section
+    id="profile"
+    class="student-section">
+
+    <div class="page-header">
+
+        <p class="small-title">
+            ACCOUNT
+        </p>
+
+        <h1>
+            My Profile
+        </h1>
+
+        <p>
+            View your personal and academic information.
+        </p>
+
+    </div>
+
+
+    <div class="profile-layout">
+
+        <div class="profile-card">
+
+            <div
+                class="large-avatar"
+                id="profileAvatar">
+                JK
+            </div>
+
+            <h2 id="profileName">
+                Loading...
+            </h2>
+
+            <p>
+                Student ID:
+                <span
+                    class="student-id"
+                    id="profileStudentId">
+                    STU001
+                </span>
+            </p>
+
+            <span
+                class="status-badge">
+                Active Student
+            </span>
+
+        </div>
+
+
+        <div class="panel profile-details">
+
+            <h2>
+                Personal Information
+            </h2>
+
+            <div class="details-grid">
+
+                <div>
+                    <span>Full Name</span>
+                    <strong id="profileFullName">
+                        Loading...
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Student ID</span>
+                    <strong
+                        class="student-id"
+                        id="profileId">
+                        STU001
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Email</span>
+                    <strong id="profileEmail">
+                        Loading...
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Mobile</span>
+                    <strong id="profileMobile">
+                        Loading...
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Course</span>
+                    <strong id="profileCourse">
+                        Loading...
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Semester</span>
+                    <strong id="profileSemester">
+                        Loading...
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Academic Year</span>
+                    <strong>
+                        2026
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong>
+                        Active
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =========================
+             ATTENDANCE
+        ========================== -->
+
+       <section
+    id="attendance"
+    class="student-section">
+
+    <div class="page-header">
+
+        <p class="small-title">
+            ACADEMIC
+        </p>
+
+        <h1>
+            My Attendance
+        </h1>
+
+        <p>
+            Check your attendance records.
+        </p>
+
+    </div>
+
+
+    <!-- Attendance Overview -->
+
+    <div class="attendance-overview">
+
+        <div class="attendance-circle">
+
+            <strong id="studentAttendancePercentage">
+                0%
+            </strong>
+
+            <span>
+                Overall
+            </span>
+
+        </div>
+
+        <div>
+
+            <h2 id="attendanceMessage">
+                Loading Attendance...
+            </h2>
+
+            <p id="attendanceDescription">
+                Your attendance information is being loaded
+                from the database.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Attendance Records -->
+
+    <div class="panel table-panel">
+
+        <div class="panel-header">
+
+            <h2>
+                Attendance History
+            </h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="studentAttendanceTableBody">
+
+                    <tr>
+
+                        <td colspan="2">
+                            Loading attendance...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+     <!-- =========================
+     RESULTS
+========================== -->
+
+<section
+    id="results"
+    class="student-section">
+
+    <div class="page-header">
+
+        <p class="small-title">
+            ACADEMIC
+        </p>
+
+        <h1>
+            My Results
+        </h1>
+
+        <p>
+            View your semester examination results.
+        </p>
+
+    </div>
+
+
+    <!-- RESULT SUMMARY -->
+
+    <div class="result-summary">
+
+        <div>
+
+           <span>
+    Average Marks
+</span>
+
+            <strong id="studentResultCGPA">
+                --
+            </strong>
+
+        </div>
+
+        <div>
+
+            <span>
+                Overall Grade
+            </span>
+
+            <strong id="studentResultGrade">
+                --
+            </strong>
+
+        </div>
+
+        <div>
+
+            <span>
+                Semester
+            </span>
+
+            <strong id="studentResultSemester">
+                --
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULTS TABLE -->
+
+    <div class="panel table-panel">
+
+        <div class="panel-header">
+
+            <h2>
+                Semester Results
+            </h2>
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Subject
+                        </th>
+
+                        <th>
+                            Marks
+                        </th>
+
+                        <th>
+                            Grade
+                        </th>
+
+                        <th>
+                            Result
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentResultsTableBody">
+
+                    <tr>
+
+                        <td colspan="4">
+                            Loading results...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =========================
+             COURSES
+        ========================== -->
+
+        <section
+            id="courses"
+            class="student-section">
+
+            <div class="page-header">
+
+                <p class="small-title">
+                    ACADEMIC
+                </p>
+
+                <h1>
+                    My Courses
+                </h1>
+
+                <p>
+                    Courses enrolled in the current semester.
+                </p>
+
+            </div>
+
+
+            <div class="course-grid">
+
+                <div class="course-card">
+
+                    <div class="course-number">
+                        01
+                    </div>
+
+                    <h2>
+                        Database Management
+                    </h2>
+
+                    <p>
+                        Database concepts, SQL,
+                        normalization and transactions.
+                    </p>
+
+                    <div class="course-info">
+
+                        <span>
+                            4 Credits
+                        </span>
+
+                        <span>
+                            90% Attendance
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-number">
+                        02
+                    </div>
+
+                    <h2>
+                        Web Development
+                    </h2>
+
+                    <p>
+                        HTML, CSS, JavaScript and
+                        full-stack development.
+                    </p>
+
+                    <div class="course-info">
+
+                        <span>
+                            4 Credits
+                        </span>
+
+                        <span>
+                            89% Attendance
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-number">
+                        03
+                    </div>
+
+                    <h2>
+                        Internet of Things
+                    </h2>
+
+                    <p>
+                        Sensors, networking,
+                        microcontrollers and IoT systems.
+                    </p>
+
+                    <div class="course-info">
+
+                        <span>
+                            3 Credits
+                        </span>
+
+                        <span>
+                            83% Attendance
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-number">
+                        04
+                    </div>
+
+                    <h2>
+                        Advanced Java
+                    </h2>
+
+                    <p>
+                        JSP, Servlets, JDBC and
+                        enterprise Java development.
+                    </p>
+
+                    <div class="course-info">
+
+                        <span>
+                            4 Credits
+                        </span>
+
+                        <span>
+                            81% Attendance
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NOTIFICATIONS
+        ========================== -->
+
+        <section
+            id="notifications"
+            class="student-section">
+
+            <div class="page-header">
+
+                <p class="small-title">
+                    INFORMATION
+                </p>
+
+                <h1>
+                    Notifications
+                </h1>
+
+                <p>
+                    Latest academic announcements.
+                </p>
+
+            </div>
+
+
+            <div class="notification-list">
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Examination Schedule Released
+                        </h3>
+
+                        <p>
+                            The internal examination schedule
+                            has been published.
+                        </p>
+
+                        <small>
+                            2 hours ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Attendance Updated
+                        </h3>
+
+                        <p>
+                            Your latest attendance records
+                            are now available.
+                        </p>
+
+                        <small>
+                            Yesterday
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        📢
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Project Submission
+                        </h3>
+
+                        <p>
+                            Remember to submit your project
+                            before the deadline.
+                        </p>
+
+                        <small>
+                            3 days ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="student.js"></script>
+
+</body>
+
+</html>

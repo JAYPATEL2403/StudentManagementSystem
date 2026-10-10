@@ -1,0 +1,2746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Student Management System | Admin
+    </title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="adminSidebar"
+    >
+
+        <!-- Logo -->
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="logo-text">
+
+                <h2>
+                    StudentMS
+                </h2>
+
+                <span>
+                    Management System
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="#"
+                class="nav-link active"
+                data-page="dashboard"
+            >
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-link"
+                data-page="students"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Students
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-link"
+                data-page="attendance"
+            >
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <span>
+                    Attendance
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-link"
+                data-page="results"
+            >
+
+                <i class="fa-solid fa-square-poll-vertical"></i>
+
+                <span>
+                    Results
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-link"
+                data-page="courses"
+            >
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>
+                    Courses
+                </span>
+
+            </a>
+
+
+            <p class="nav-title settings-title">
+                SYSTEM
+            </p>
+
+
+            <a
+                href="#"
+                class="nav-link"
+                data-page="settings"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="adminLogout"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Sidebar Overlay -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <!-- Mobile Menu -->
+
+                <button
+                    type="button"
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Open menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div>
+
+                    <h1 id="pageTitle">
+                        Admin Dashboard
+                    </h1>
+
+                    <p id="pageSubtitle">
+                        Manage your student system
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Admin Profile -->
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div class="admin-info">
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <span>
+                        Admin Account
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <div class="content-container">
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+            <section
+                class="page active-page"
+                id="dashboard"
+            >
+
+                <!-- Welcome -->
+
+                <div class="welcome-card">
+
+                    <div>
+
+                        <span class="welcome-label">
+                            ADMINISTRATION PANEL
+                        </span>
+
+                        <h2>
+                            Welcome back, Admin
+                        </h2>
+
+                        <p>
+                            Manage students, attendance,
+                            examination results and
+                            academic courses from one
+                            centralized dashboard.
+                        </p>
+
+                    </div>
+
+
+                    <div class="welcome-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Statistics -->
+
+                <div class="stats-grid">
+
+
+                    <!-- Total Students -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span>
+                                Total Students
+                            </span>
+
+                            <h3 id="totalStudents">
+                                0
+                            </h3>
+
+                            <small>
+                                Registered students
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Attendance -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span>
+                                Attendance
+                            </span>
+
+                            <h3>
+                                92%
+                            </h3>
+
+                            <small>
+                                Average attendance
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Results -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+
+                            <i class="fa-solid fa-award"></i>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span>
+                                Results
+                            </span>
+
+                            <h3>
+                                85%
+                            </h3>
+
+                            <small>
+                                Average performance
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Courses -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+
+                            <i class="fa-solid fa-book"></i>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span>
+                                Courses
+                            </span>
+
+                            <h3>
+                                8
+                            </h3>
+
+                            <small>
+                                Active courses
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quick Actions -->
+
+                <div class="section-heading">
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                    <p>
+                        Access commonly used features
+                    </p>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-open="students"
+                    >
+
+                        <div class="quick-icon blue">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Manage Students
+                            </strong>
+
+                            <span>
+                                Add, edit and delete students
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-open="attendance"
+                    >
+
+                        <div class="quick-icon green">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Attendance
+                            </strong>
+
+                            <span>
+                                Monitor student attendance
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-open="results"
+                    >
+
+                        <div class="quick-icon orange">
+
+                            <i class="fa-solid fa-square-poll-vertical"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Results
+                            </strong>
+
+                            <span>
+                                Manage examination results
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-open="courses"
+                    >
+
+                        <div class="quick-icon purple">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Courses
+                            </strong>
+
+                            <span>
+                                Manage academic courses
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STUDENTS
+            ================================================== -->
+
+            <section
+                class="page"
+                id="students"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h2>
+                            Student Management
+                        </h2>
+
+                        <p>
+                            Add, edit, search and manage
+                            registered students.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="addStudentBtn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Student
+
+                    </button>
+
+                </div>
+
+
+                <!-- Student Controls -->
+
+                <div class="student-controls">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-search"></i>
+
+                        <input
+                            type="search"
+                            id="studentSearch"
+                            placeholder="Search by ID, name, email or course..."
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="refreshStudentsBtn"
+                    >
+
+                        <i class="fa-solid fa-rotate"></i>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="student-status"
+                    id="studentStatus"
+                >
+                    Loading students...
+                </p>
+
+
+                <!-- Student Table -->
+
+                <div class="table-container">
+
+                    <div class="table-scroll">
+
+                        <table class="student-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Student ID
+                                    </th>
+
+                                    <th>
+                                        Name
+                                    </th>
+
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Course
+                                    </th>
+
+                                    <th>
+                                        Semester
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="studentTable">
+
+                                <tr>
+
+                                    <td
+                                        colspan="6"
+                                        class="table-loading"
+                                    >
+                                        Loading students...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ATTENDANCE
+            ================================================== -->
+
+            <section
+                class="page"
+                id="attendance"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h2>
+                            Attendance Management
+                        </h2>
+
+                        <p>
+                            Monitor and manage student
+                            attendance records.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="openAttendanceModalBtn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Mark Attendance
+
+                    </button>
+
+                </div>
+
+
+                <!-- Attendance Summary -->
+
+                <div class="attendance-summary">
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+
+                            <i class="fa-solid fa-clipboard-list"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Records
+                            </span>
+
+                            <h3 id="totalAttendance">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Present
+                            </span>
+
+                            <h3 id="presentCount">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+
+                            <i class="fa-solid fa-user-xmark"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Absent
+                            </span>
+
+                            <h3 id="absentCount">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Attendance Table -->
+
+                <div class="table-container">
+
+                    <div class="attendance-table-header">
+
+                        <div>
+
+                            <h3>
+                                Attendance Records
+                            </h3>
+
+                            <p>
+                                View all attendance records
+                                stored in the database.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="refreshAttendanceBtn"
+                        >
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-scroll">
+
+                        <table class="attendance-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        ID
+                                    </th>
+
+                                    <th>
+                                        Student ID
+                                    </th>
+
+                                    <th>
+                                        Student Name
+                                    </th>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="attendanceTableBody">
+
+                                <tr>
+
+                                    <td
+                                        colspan="6"
+                                        class="table-loading"
+                                    >
+                                        Loading attendance...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+<!-- =========================================================
+     RESULT MANAGEMENT
+========================================================= -->
+
+<section class="page" id="results">
+
+    <div class="page-header">
+
+        <div>
+            <h2>Result Management</h2>
+            <p>Manage student examination results.</p>
+        </div>
+
+        <!-- ONLY BUTTON USED TO ADD RESULT -->
+        <button
+            type="button"
+            class="primary-btn"
+            id="openResultModalBtn"
+        >
+            <i class="fa-solid fa-plus"></i>
+            Add Result
+        </button>
+
+    </div>
+
+
+    <!-- RESULT SUMMARY -->
+
+    <div class="attendance-summary">
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+
+            <div>
+                <span>Total Results</span>
+                <h3 id="totalResults">0</h3>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+                <span>Passed</span>
+                <h3 id="passedResults">0</h3>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+
+            <div>
+                <span>Failed</span>
+                <h3 id="failedResults">0</h3>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <div>
+                <span>Average Marks</span>
+                <h3 id="averageMarks">0%</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULTS TABLE -->
+
+    <div class="table-container">
+
+        <div class="attendance-table-header">
+
+            <div>
+                <h3>Student Results</h3>
+
+                <p>
+                    View and manage examination results.
+                </p>
+            </div>
+
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="refreshResultsBtn"
+            >
+                <i class="fa-solid fa-rotate"></i>
+                Refresh
+            </button>
+
+        </div>
+
+
+        <div class="table-scroll">
+
+            <table class="attendance-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>Result</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="resultsTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="8"
+                            class="table-loading"
+                        >
+                            Loading results...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+            <!-- =================================================
+                 COURSES
+            ================================================== -->
+
+            <section
+                class="page"
+                id="courses"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h2>
+                            Course Management
+                        </h2>
+
+                        <p>
+                            View and manage available
+                            academic courses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-grid">
+
+
+                    <!-- Course 1 -->
+
+                    <div class="course-card">
+
+                        <div class="course-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <h3>
+                            B.Tech IT
+                        </h3>
+
+                        <p>
+                            Bachelor of Technology in
+                            Information Technology.
+                        </p>
+
+                        <span>
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <!-- Course 2 -->
+
+                    <div class="course-card">
+
+                        <div class="course-icon">
+
+                            <i class="fa-solid fa-laptop-code"></i>
+
+                        </div>
+
+                        <h3>
+                            BCA
+                        </h3>
+
+                        <p>
+                            Bachelor of Computer
+                            Applications.
+                        </p>
+
+                        <span>
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <!-- Course 3 -->
+
+                    <div class="course-card">
+
+                        <div class="course-icon">
+
+                            <i class="fa-solid fa-database"></i>
+
+                        </div>
+
+                        <h3>
+                            B.Sc Computer Science
+                        </h3>
+
+                        <p>
+                            Computer science and
+                            information technology program.
+                        </p>
+
+                        <span>
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <!-- Course 4 -->
+
+                    <div class="course-card">
+
+                        <div class="course-icon">
+
+                            <i class="fa-solid fa-network-wired"></i>
+
+                        </div>
+
+                        <h3>
+                            Diploma IT
+                        </h3>
+
+                        <p>
+                            Diploma program focused on
+                            information technology.
+                        </p>
+
+                        <span>
+                            Active
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SETTINGS
+            ================================================== -->
+
+            <section
+                class="page"
+                id="settings"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h2>
+                            System Settings
+                        </h2>
+
+                        <p>
+                            View system configuration
+                            information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+
+                    <!-- Database -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-icon">
+
+                            <i class="fa-solid fa-database"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Database
+                            </h3>
+
+                            <p>
+                                Current application database
+                                is SQLite.
+                            </p>
+
+                            <span class="status-connected">
+
+                                <i class="fa-solid fa-circle"></i>
+
+                                Connected
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Backend -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-icon">
+
+                            <i class="fa-solid fa-server"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Backend Server
+                            </h3>
+
+                            <p>
+                                Node.js and Express.js API
+                                server.
+                            </p>
+
+                            <span class="status-connected">
+
+                                <i class="fa-solid fa-circle"></i>
+
+                                Running
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Application -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-icon">
+
+                            <i class="fa-solid fa-window-maximize"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Application
+                            </h3>
+
+                            <p>
+                                Student Management System
+                                Admin Panel.
+                            </p>
+
+                            <span class="version-badge">
+                                Version 1.0
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Security -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-icon">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Authentication
+                            </h3>
+
+                            <p>
+                                Admin role authentication is
+                                enabled.
+                            </p>
+
+                            <span class="status-connected">
+
+                                <i class="fa-solid fa-circle"></i>
+
+                                Enabled
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     MARK ATTENDANCE MODAL
+========================================================= -->
+
+<div
+    class="student-modal"
+    id="attendanceModal"
+>
+
+    <div class="student-modal-content">
+
+
+        <!-- Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-label">
+                    ATTENDANCE MANAGEMENT
+                </span>
+
+                <h2>
+                    Mark Attendance
+                </h2>
+
+                <p>
+                    Add a Present or Absent record
+                    for a student.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeAttendanceModal"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- Attendance Form -->
+
+        <form
+            id="attendanceForm"
+            novalidate
+        >
+
+            <div class="form-grid">
+
+
+                <!-- Student ID -->
+
+                <div class="form-group">
+
+                    <label for="attendanceStudentId">
+
+                        Student ID
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="StudentId"
+                        name="studentId"
+                        placeholder="Enter Student ID"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Date -->
+
+                <div class="form-group">
+
+                    <label for="attendanceDate">
+
+                        Date
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                        name="date"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label for="attendanceStatus">
+
+                        Attendance Status
+
+                        <span>*</span>
+
+                    </label>
+
+                    <select
+                        id="attendanceStatus"
+                        name="status"
+                        required
+                    >
+
+                        <option value="">
+                            Select Status
+                        </option>
+
+                        <option value="Present">
+                            Present
+                        </option>
+
+                        <option value="Absent">
+                            Absent
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelAttendanceBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-student-btn"
+                >
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Mark Attendance
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     ADD STUDENT MODAL
+========================================================= -->
+
+<div
+    class="student-modal"
+    id="studentModal"
+>
+
+    <div class="student-modal-content">
+
+
+        <!-- Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-label">
+                    STUDENT MANAGEMENT
+                </span>
+
+                <h2>
+                    Add Student
+                </h2>
+
+                <p>
+                    Enter the student's information below.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeStudentModal"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- Student Form -->
+
+        <form
+            id="studentForm"
+            novalidate
+        >
+
+            <div class="form-grid">
+
+
+                <!-- Student ID -->
+
+                <div class="form-group">
+
+                    <label for="studentId">
+
+                        Student ID
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        name="studentId"
+                        placeholder="Example: STU004"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Student Name -->
+
+                <div class="form-group">
+
+                    <label for="studentName">
+
+                        Student Name
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        name="name"
+                        placeholder="Enter student full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="studentEmail">
+
+                        Email
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        name="email"
+                        placeholder="Enter email address"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Mobile -->
+
+                <div class="form-group">
+
+                    <label for="studentMobile">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="studentMobile"
+                        name="mobile"
+                        placeholder="Enter mobile number"
+                    >
+
+                </div>
+
+
+                <!-- Course -->
+
+                <div class="form-group">
+
+                    <label for="studentCourse">
+
+                        Course
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentCourse"
+                        name="course"
+                        placeholder="Example: B.Tech IT"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Semester -->
+
+                <div class="form-group">
+
+                    <label for="studentSemester">
+
+                        Semester
+
+                        <span>*</span>
+
+                    </label>
+
+                    <select
+                        id="studentSemester"
+                        name="semester"
+                        required
+                    >
+
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                        <option value="1">
+                            Semester 1
+                        </option>
+
+                        <option value="2">
+                            Semester 2
+                        </option>
+
+                        <option value="3">
+                            Semester 3
+                        </option>
+
+                        <option value="4">
+                            Semester 4
+                        </option>
+
+                        <option value="5">
+                            Semester 5
+                        </option>
+
+                        <option value="6">
+                            Semester 6
+                        </option>
+
+                        <option value="7">
+                            Semester 7
+                        </option>
+
+                        <option value="8">
+                            Semester 8
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelStudentBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-student-btn"
+                >
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Add Student
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     EDIT STUDENT MODAL
+========================================================= -->
+
+<div
+    class="student-modal"
+    id="editStudentModal"
+>
+
+    <div class="student-modal-content">
+
+
+        <!-- Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-label">
+                    STUDENT MANAGEMENT
+                </span>
+
+                <h2>
+                    Edit Student
+                </h2>
+
+                <p>
+                    Update the student's information.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeEditStudentModal"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- Edit Form -->
+
+        <form
+            id="editStudentForm"
+            novalidate
+        >
+
+            <div class="form-grid">
+
+
+                <!-- Student ID -->
+
+                <div class="form-group">
+
+                    <label for="editStudentId">
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editStudentId"
+                        name="studentId"
+                        readonly
+                    >
+
+                    <small>
+                        Student ID cannot be changed.
+                    </small>
+
+                </div>
+
+
+                <!-- Student Name -->
+
+                <div class="form-group">
+
+                    <label for="editStudentName">
+
+                        Student Name
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editStudentName"
+                        name="name"
+                        placeholder="Enter student name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="editStudentEmail">
+
+                        Email
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="email"
+                        id="editStudentEmail"
+                        name="email"
+                        placeholder="Enter email address"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Mobile -->
+
+                <div class="form-group">
+
+                    <label for="editStudentMobile">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="editStudentMobile"
+                        name="mobile"
+                        placeholder="Enter mobile number"
+                    >
+
+                </div>
+
+
+                <!-- Course -->
+
+                <div class="form-group">
+
+                    <label for="editStudentCourse">
+
+                        Course
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editStudentCourse"
+                        name="course"
+                        placeholder="Enter course"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Semester -->
+
+                <div class="form-group">
+
+                    <label for="editStudentSemester">
+
+                        Semester
+
+                        <span>*</span>
+
+                    </label>
+
+                    <select
+                        id="editStudentSemester"
+                        name="semester"
+                        required
+                    >
+
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                        <option value="1">
+                            Semester 1
+                        </option>
+
+                        <option value="2">
+                            Semester 2
+                        </option>
+
+                        <option value="3">
+                            Semester 3
+                        </option>
+
+                        <option value="4">
+                            Semester 4
+                        </option>
+
+                        <option value="5">
+                            Semester 5
+                        </option>
+
+                        <option value="6">
+                            Semester 6
+                        </option>
+
+                        <option value="7">
+                            Semester 7
+                        </option>
+
+                        <option value="8">
+                            Semester 8
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelEditStudentBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-student-btn"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Update Student
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     ADD RESULT MODAL
+========================================================= -->
+
+<div
+    class="student-modal"
+    id="resultModal"
+>
+
+    <div class="student-modal-content">
+
+        <!-- HEADER -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-label">
+                    RESULT MANAGEMENT
+                </span>
+
+                <h2>Add Student Result</h2>
+
+                <p>
+                    Enter examination details for the student.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeResultModal"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form
+            id="resultForm"
+            novalidate
+        >
+
+            <div class="form-grid">
+
+
+                <!-- STUDENT ID -->
+
+                <div class="form-group">
+
+                    <label for="resultStudent">
+
+                        Student ID
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resultStudent"
+                        name="studentId"
+                        placeholder="Example: STU001"
+                        required
+                    >
+
+                    <small>
+                        Enter the registered Student ID.
+                    </small>
+
+                </div>
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="resultSubject">
+
+                        Subject
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resultSubject"
+                        name="subject"
+                        placeholder="Example: Java Programming"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MARKS -->
+
+                <div class="form-group">
+
+                    <label for="resultMarks">
+
+                        Marks
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="resultMarks"
+                        name="marks"
+                        placeholder="Enter marks"
+                        min="0"
+                        max="100"
+                        required
+                    >
+
+                    <small>
+                        Marks must be between 0 and 100.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="result-info">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Grade and Pass/Fail status will be calculated automatically.
+                </span>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelResultBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-student-btn"
+                    id="saveResultBtn"
+                >
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    Add Result
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
+
+<!-- =========================================================
+     ADD RESULT MODAL
+========================================================= -->
+
+<div
+    class="student-modal"
+    id="resultModal"
+>
+
+    <div class="student-modal-content">
+
+
+        <!-- Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-label">
+                    RESULT MANAGEMENT
+                </span>
+
+                <h2>
+                    Add Student Result
+                </h2>
+
+                <p>
+                    Enter the student's examination result.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeResultModal"
+                aria-label="Close"
+            >
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+        <!-- Result Form -->
+
+        <form
+            id="resultForm"
+            novalidate
+        >
+
+            <div class="form-grid">
+
+
+                <!-- Student ID -->
+
+                <div class="form-group">
+
+                    <label for="resultStudent">
+
+                        Student ID
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resultStudent"
+                        name="studentId"
+                        placeholder="Example: STU001"
+                        required
+                    >
+
+                    <small>
+                        Enter the registered Student ID.
+                    </small>
+
+                </div>
+
+
+                <!-- Subject -->
+
+                <div class="form-group">
+
+                    <label for="resultSubject">
+
+                        Subject
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resultSubject"
+                        name="subject"
+                        placeholder="Example: Java Programming"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Marks -->
+
+                <div class="form-group">
+
+                    <label for="resultMarks">
+
+                        Marks
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="resultMarks"
+                        name="marks"
+                        placeholder="Enter marks"
+                        min="0"
+                        max="100"
+                        required
+                    >
+
+                    <small>
+                        Enter marks between 0 and 100.
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Information -->
+
+            <div class="result-info">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Grade and Pass/Fail status will be calculated automatically.
+                </span>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelResultBtn"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-student-btn"
+                    id="saveResultBtn"
+                >
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    Add Result
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- =================================================
+     RESULTS
+================================================== -->
+
+<section
+    class="page"
+    id="results"
+>
+
+    <div class="page-header">
+
+        <div>
+
+            <h2>
+                Result Management
+            </h2>
+
+            <p>
+                Monitor and manage student examination results.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="openResultModalBtn"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Result
+
+        </button>
+
+    </div>
+
+
+    <!-- Result Summary -->
+
+    <div class="attendance-summary">
+
+
+        <!-- Total Results -->
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Total Results
+                </span>
+
+                <h3 id="totalResults">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- Passed -->
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Passed
+                </span>
+
+                <h3 id="passedResults">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- Failed -->
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-circle-xmark"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Failed
+                </span>
+
+                <h3 id="failedResults">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- Average -->
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Average Marks
+                </span>
+
+                <h3 id="averageMarks">
+                    0%
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Results Table -->
+
+    <div class="table-container">
+
+        <div class="attendance-table-header">
+
+            <div>
+
+                <h3>
+                    Student Results
+                </h3>
+
+                <p>
+                    View all examination results stored in the database.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="refreshResultsBtn"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+        </div>
+
+
+        <div class="table-scroll">
+
+            <table class="attendance-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Student ID
+                        </th>
+
+                        <th>
+                            Student Name
+                        </th>
+
+                        <th>
+                            Subject
+                        </th>
+
+                        <th>
+                            Marks
+                        </th>
+
+                        <th>
+                            Grade
+                        </th>
+
+                        <th>
+                            Result
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="resultsTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="8"
+                            class="table-loading"
+                        >
+
+                            Loading results...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>
