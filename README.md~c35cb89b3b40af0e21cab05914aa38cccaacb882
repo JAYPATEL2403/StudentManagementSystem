@@ -1,2 +1,26 @@
 # StudentManagementSystem
 A web-based Student Management System using HTML, CSS, JavaScript, Node.js, Express.js, and SQLite.
+# Student Management System
+
+A web-based Student Management System built to organize student information and academic activities.
+
+## Features
+- Admin and student login
+- Student record management
+- Attendance management
+- Results management
+- Course management
+- Student dashboard
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express.js
+- SQLite
+
+## Setup
+1. Install Node.js.
+2. Run `npm install`.
+3. Start the backend using the start command configured in `package.json`.
